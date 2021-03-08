@@ -1,0 +1,25 @@
+.header__container {
+  height: 6.5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+  .header__wrap {
+    height: 100%;
+    position: relative;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    .header__logo {
+      position: absolute;
+      width: 10rem;
+      height: 100%;
+      left: 1rem;
+      //   top: 50%;
+      //   transform: translateY(-50%);
+      //   background: rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+}

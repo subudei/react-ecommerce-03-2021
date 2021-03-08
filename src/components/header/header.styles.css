@@ -1,0 +1,30 @@
+.header__container {
+  height: 6.5rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header__container .header__wrap {
+  height: 100%;
+  position: relative;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.header__container .header__wrap .header__logo {
+  position: absolute;
+  width: 10rem;
+  height: 100%;
+  left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+/*# sourceMappingURL=header.styles.css.map */
