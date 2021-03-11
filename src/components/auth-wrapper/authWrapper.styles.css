@@ -1,0 +1,34 @@
+.auth__wrapper__container {
+  width: 100%;
+  max-width: 40rem;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 4rem auto 6rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth__wrapper__container .wrap__div {
+  width: 100%;
+  padding: 1rem;
+}
+
+.auth__wrapper__container .wrap__div h2 {
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.auth__wrapper__container .wrap__div .children__div {
+  margin: 3rem auto 0;
+}
+/*# sourceMappingURL=authWrapper.styles.css.map */

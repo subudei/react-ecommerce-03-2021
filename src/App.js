@@ -10,6 +10,7 @@ import Layout from "./components/layout/layout";
 import HomePage from "./components/pages/home-page/homePage";
 import Registration from "./components/pages/registration-page/registration";
 import Login from "./components/pages/login-page/login";
+import Recovery from "./components/pages/recovery/recovery";
 
 const initailState = {
   currentUser: null,
@@ -86,6 +87,14 @@ class App extends Component {
                 </Layout>
               )
             }
+          />
+          <Route
+            path="/recovery"
+            render={() => (
+              <Layout currentUser={currentUser}>
+                <Recovery />
+              </Layout>
+            )}
           />
           {/* <Route
             path="/login"

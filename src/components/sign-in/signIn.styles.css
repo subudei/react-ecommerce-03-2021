@@ -1,38 +1,14 @@
-.sign__in__container {
-  width: 100%;
-  max-width: 40rem;
-  border: 1px solid black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 4rem auto 6rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.social__sign__in {
+  margin: 0.5rem auto 0;
 }
 
-.sign__in__container .sign__in__wrap {
-  width: 100%;
-  padding: 1rem;
-}
-
-.sign__in__container .sign__in__wrap h2 {
-  font-size: 2.2rem;
-  line-height: 1;
-  font-weight: 400;
-  text-transform: uppercase;
+.sign__in__links {
   display: block;
   width: 100%;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
+  margin: 1.5rem auto 0;
 }
 
-.sign__in__container .sign__in__wrap .form__wrap {
-  margin: 3rem auto 0;
-}
-
-.sign__in__container .sign__in__wrap .social__sign__in {
-  margin: 0.5rem auto 0;
+.sign__in__links a {
+  color: black;
 }
 /*# sourceMappingURL=signIn.styles.css.map */

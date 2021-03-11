@@ -3,6 +3,7 @@ import "./signUp.styles.css";
 
 import Button from "../forms/button/button";
 import FormInput from "../forms/form-input/formInput";
+import AuthWrapper from "../auth-wrapper/authWrapper";
 
 import { auth, handleUserProfile } from "../../firebase/utils";
 
@@ -66,10 +67,13 @@ class SignUp extends Component {
       confirmPassword,
       errors,
     } = this.state;
+
+    const configAuthWrapper = {
+      headline: "registration",
+    };
     return (
-      <div className="sign__up__container">
-        <div className="sign__up__wrap">
-          <h2>Signup</h2>
+      <AuthWrapper {...configAuthWrapper}>
+        <div className="form__wrap">
           {errors.length > 0 && (
             <ul style={{ color: "red" }}>
               {errors.map((err, index) => {
@@ -77,41 +81,39 @@ class SignUp extends Component {
               })}
             </ul>
           )}
-          <div className="form__wrap">
-            <form onSubmit={this.handleFormSubmit}>
-              <FormInput
-                type="text"
-                name="displayName"
-                value={displayName}
-                placeholder="Full name"
-                onChange={this.handleChange}
-              />
-              <FormInput
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Email"
-                onChange={this.handleChange}
-              />
-              <FormInput
-                type="password"
-                name="password"
-                value={password}
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-              <FormInput
-                type="password"
-                name="confirmPassword"
-                value={confirmPassword}
-                placeholder="Confirm Password"
-                onChange={this.handleChange}
-              />
-              <Button type="submit">Register</Button>
-            </form>
-          </div>
+          <form onSubmit={this.handleFormSubmit}>
+            <FormInput
+              type="text"
+              name="displayName"
+              value={displayName}
+              placeholder="Full name"
+              onChange={this.handleChange}
+            />
+            <FormInput
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Email"
+              onChange={this.handleChange}
+            />
+            <FormInput
+              type="password"
+              name="password"
+              value={password}
+              placeholder="Password"
+              onChange={this.handleChange}
+            />
+            <FormInput
+              type="password"
+              name="confirmPassword"
+              value={confirmPassword}
+              placeholder="Confirm Password"
+              onChange={this.handleChange}
+            />
+            <Button type="submit">Register</Button>
+          </form>
         </div>
-      </div>
+      </AuthWrapper>
     );
   }
 }
