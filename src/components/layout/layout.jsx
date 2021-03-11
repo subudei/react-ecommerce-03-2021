@@ -3,11 +3,11 @@ import "./layout.styles.css";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 
-function Layout({ children }) {
+function Layout(props) {
   return (
     <div className="layout__container">
-      <Header />
-      {children}
+      <Header {...props} />
+      {props.children}
       <Footer />
     </div>
   );

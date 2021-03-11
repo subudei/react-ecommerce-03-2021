@@ -13,7 +13,7 @@ class SignIn extends Component {
     return (
       <div className="sign__in__container">
         <div className="sign__in__wrap">
-          <h2>sign in</h2>
+          <h2>login</h2>
           <div className="form__wrap">
             <form onSubmit={this.handleSubmit}>
               <div className="social__sign__in">

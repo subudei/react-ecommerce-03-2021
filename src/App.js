@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./default.css";
 
-import { auth } from "./firebase/utils";
+import { auth, handleUserProfile } from "./firebase/utils";
 
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import Layout from "./components/layout/layout";
 
@@ -26,11 +26,21 @@ class App extends Component {
   authListener = null;
 
   componentDidMount() {
-    this.authListener = auth.onAuthStateChanged((userAuth) => {
-      if (!userAuth) return;
+    this.authListener = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await handleUserProfile(userAuth);
+        userRef.onSnapshot((snapshot) => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data(),
+            },
+          });
+        });
+      }
 
       this.setState({
-        currentUser: userAuth,
+        ...initailState,
       });
     });
   }
@@ -40,17 +50,40 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.state;
     return (
       <div className="App">
-        <Layout>
-          <div className="main">
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route path="/registration" component={Registration} />
-              <Route path="/login" component={Login} />
-            </Switch>
-          </div>
-        </Layout>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Layout currentUser={currentUser}>
+                <HomePage />
+              </Layout>
+            )}
+          />
+          <Route
+            path="/registration"
+            render={() => (
+              <Layout currentUser={currentUser}>
+                <Registration />
+              </Layout>
+            )}
+          />
+          <Route
+            path="/login"
+            render={() =>
+              currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <Layout currentUser={currentUser}>
+                  <Login />
+                </Layout>
+              )
+            }
+          />
+        </Switch>
       </div>
     );
   }
