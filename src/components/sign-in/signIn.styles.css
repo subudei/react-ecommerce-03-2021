@@ -28,7 +28,11 @@
   padding: 0;
 }
 
-.sign__in__container .sign__in__wrap .social__sign__in {
+.sign__in__container .sign__in__wrap .form__wrap {
   margin: 3rem auto 0;
+}
+
+.sign__in__container .sign__in__wrap .social__sign__in {
+  margin: 0.5rem auto 0;
 }
 /*# sourceMappingURL=signIn.styles.css.map */
