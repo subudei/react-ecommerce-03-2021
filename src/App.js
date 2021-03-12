@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./default.css";
-
+// 28:00
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
