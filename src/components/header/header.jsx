@@ -1,12 +1,16 @@
 import React from "react";
 import "./header.styles.css";
 
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/utils";
 
+const mapState = ({ user }) => ({
+  currentUser: user.currentUser,
+}); // mapira state koji se nalazi u storu, a koji povlaci kroz useSelector, i dobijam currentUser varijablu (state)
+
 function Header(props) {
-  const { currentUser } = props;
+  const { currentUser } = useSelector(mapState);
   return (
     <div className="header__container">
       <div className="header__wrap">
@@ -49,8 +53,8 @@ Header.defaultProps = {
   currentUser: null,
 };
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
-});
+// const mapState = ()=> ({
 
-export default connect(mapStateToProps, null)(Header);
+// })
+
+export default Header;
