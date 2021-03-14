@@ -32,9 +32,6 @@ function Header(props) {
           )}
           {!currentUser && (
             <ul>
-              {/* <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li> */}
               <li>
                 <Link to="/registration">Register</Link>
               </li>
@@ -52,9 +49,5 @@ function Header(props) {
 Header.defaultProps = {
   currentUser: null,
 };
-
-// const mapState = ()=> ({
-
-// })
 
 export default Header;
