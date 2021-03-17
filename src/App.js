@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { checkUserSession } from "./redux/user/user.actions";
 
 import WithAuth from "./higher-order-component/withAuth";
+import WithAdminAuth from "./higher-order-component/withAdminAuth";
 
 import Layout from "./components/layout/layout";
 import HomePage from "./components/pages/home-page/homePage";
@@ -14,6 +15,7 @@ import Registration from "./components/pages/registration-page/registration";
 import Login from "./components/pages/login-page/login";
 import Recovery from "./components/pages/recovery-page/recovery";
 import Dashboard from "./components/pages/dashboard-page/dashboard";
+import Admin from "./components/pages/admin-page/admin";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -66,6 +68,16 @@ const App = (props) => {
                 <Dashboard />
               </Layout>
             </WithAuth>
+          )}
+        />
+        <Route
+          path="/admin"
+          render={() => (
+            <WithAdminAuth>
+              <Layout>
+                <Admin />
+              </Layout>
+            </WithAdminAuth>
           )}
         />
       </Switch>
