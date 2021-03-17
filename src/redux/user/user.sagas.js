@@ -6,14 +6,17 @@ import {
   getCurrentUser,
   GoogleProvider,
 } from "../../firebase/utils";
-import { signInSucess } from "./user.actions";
+import { signInSuccess, signOutUserSuccess, userError } from "./user.actions";
 
-export function* getSnapshotFromUserAuth(user) {
+export function* getSnapshotFromUserAuth(user, additionalData = {}) {
   try {
-    const userRef = yield call(handleUserProfile, { userAuth: user });
+    const userRef = yield call(handleUserProfile, {
+      userAuth: user,
+      additionalData,
+    });
     const snapshot = yield userRef.get();
     yield put(
-      signInSucess({
+      signInSuccess({
         id: snapshot.id,
         ...snapshot.data(),
       })
@@ -50,8 +53,52 @@ export function* onCheckUserSession() {
   yield takeLatest(userTypes.CHECK_USER_SESSION, isUserAuthenticated);
 }
 
+export function* signOutUser() {
+  try {
+    yield auth.signOut();
+    yield put(signOutUserSuccess());
+  } catch (err) {
+    //console.log(err)
+  }
+}
+
+export function* onSignOutUserStart() {
+  yield takeLatest(userTypes.SIGN_OUT_USER_START, signOutUser);
+}
+
+export function* signUpUser({
+  payload: { displayName, email, password, confirmPassword },
+}) {
+  if (password !== confirmPassword) {
+    const err = [`Password Don't match.`];
+    yield put(userError(err));
+    return;
+  }
+
+  try {
+    const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+    const additionalData = { displayName };
+    yield getSnapshotFromUserAuth(user, additionalData);
+    // yield call(handleUserProfile, {
+    //   userAuth: user,
+    //   additionalData: { displayName },
+    // });
+  } catch (err) {
+    //console.log(err)
+  }
+}
+
+export function* onSignUpUserStart() {
+  yield takeLatest(userTypes.SIGN_UP_USER_START, signUpUser);
+}
+
 export default function* userSagas() {
-  yield all([call(onEmailSignInStart), call(onCheckUserSession)]);
+  yield all([
+    call(onEmailSignInStart),
+    call(onCheckUserSession),
+    call(onSignOutUserStart),
+    call(onSignUpUserStart),
+  ]);
 }
 
 // 41:00

@@ -1,16 +1,23 @@
 import React from "react";
 import "./header.styles.css";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { auth } from "../../firebase/utils";
+
+import { signOutUserStart } from "../../redux/user/user.actions";
 
 const mapState = ({ user }) => ({
   currentUser: user.currentUser,
 }); // mapira state koji se nalazi u storu, a koji povlaci kroz useSelector, i dobijam currentUser varijablu (state)
 
 function Header(props) {
+  const dispatch = useDispatch();
   const { currentUser } = useSelector(mapState);
+
+  const signOut = () => {
+    dispatch(signOutUserStart());
+  };
+
   return (
     <div className="header__container">
       <div className="header__wrap">
@@ -26,7 +33,7 @@ function Header(props) {
                 <Link to="/dashboard">My Account</Link>
               </li>
               <li>
-                <span onClick={() => auth.signOut()}>LogOut</span>
+                <span onClick={() => signOut()}>LOGOUT</span>
               </li>
             </ul>
           )}

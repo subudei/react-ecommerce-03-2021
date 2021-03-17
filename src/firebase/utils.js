@@ -38,8 +38,8 @@ export const handleUserProfile = async ({ userAuth, additionalData }) => {
 
 export const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
-    const unsubcribe = auth.onAuthStateChanged((userAuth) => {
-      unsubcribe();
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
       resolve(userAuth);
     }, reject);
   });
