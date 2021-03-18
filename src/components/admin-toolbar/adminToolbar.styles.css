@@ -1,1 +1,41 @@
-/* No CSS *//*# sourceMappingURL=adminToolbar.styles.css.map */
+.admin__toolbar {
+  display: inline-block;
+  width: 100%;
+  background-color: black;
+  height: auto;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.admin__toolbar ul,
+.admin__toolbar li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin__toolbar ul {
+  float: right;
+}
+
+.admin__toolbar ul li {
+  display: inline-block;
+}
+
+.admin__toolbar ul li a {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: white;
+  padding: 1rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.admin__toolbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+/*# sourceMappingURL=adminToolbar.styles.css.map */
