@@ -30,6 +30,19 @@ body {
   line-height: 1;
 }
 
+h2 {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto 2rem;
+  font-size: 2.5rem;
+  line-height: 2.7rem;
+  color: #000000;
+  text-align: left;
+  text-transform: uppercase;
+  border-bottom: #d3d3d3;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;

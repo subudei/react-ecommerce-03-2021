@@ -1,0 +1,26 @@
+.dashboard__layout {
+  height: calc(100% - 6.5rem - 5.8rem - 3.6rem);
+
+  .dashboard__control__panel {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    padding: 3rem 0 6rem 25rem;
+    border-bottom: 0.1rem solid #d3d3d3;
+
+    .dashboard__sidebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25rem;
+      height: 100%;
+      z-index: 1;
+      border-right: 0.1rem solid #d3d3d3;
+
+      .dashboard__content {
+        padding: 0 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.vertical__nav__container {
+  width: 100%;
+  height: 100%;
+}
+
+.vertical__nav__container .vertical__nav__menu {
+  margin: 3rem auto 0;
+}
+
+.vertical__nav__container .vertical__nav__menu ul,
+.vertical__nav__container .vertical__nav__menu li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.vertical__nav__container .vertical__nav__menu ul li {
+  width: 100%;
+  border-bottom: 0.1rem solid #d3d3d3;
+}
+
+.vertical__nav__container .vertical__nav__menu ul li:first-child {
+  border-top: 0.1rem solid #d3d3d3;
+}
+
+.vertical__nav__container .vertical__nav__menu ul li a,
+.vertical__nav__container .vertical__nav__menu ul li span {
+  display: block;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: black;
+  cursor: pointer;
+}
+
+.vertical__nav__container .vertical__nav__menu ul li:hover {
+  background-color: #d3d3d3;
+}
+/*# sourceMappingURL=verticalNav.styles.css.map */

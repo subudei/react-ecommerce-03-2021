@@ -1,1 +1,22 @@
-/* No CSS *//*# sourceMappingURL=admin.styles.css.map */
+.admin__container {
+  padding: 0 1rem;
+}
+
+.admin__container .admin__call__to__actions {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.admin__container .admin__call__to__actions ul,
+.admin__container .admin__call__to__actions li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.admin__container .admin__call__to__actions ul li {
+  display: inline-block;
+}
+/*# sourceMappingURL=admin.styles.css.map */

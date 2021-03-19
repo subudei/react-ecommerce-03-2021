@@ -11,13 +11,15 @@ import AdminToolbar from "./components/admin-toolbar/adminToolbar";
 import WithAuth from "./higher-order-component/withAuth";
 import WithAdminAuth from "./higher-order-component/withAdminAuth";
 
-import Layout from "./components/layout/layout";
+import Layout from "./components/layout/layout/layout";
 import HomePage from "./components/pages/home-page/homePage";
 import Registration from "./components/pages/registration-page/registration";
 import Login from "./components/pages/login-page/login";
 import Recovery from "./components/pages/recovery-page/recovery";
 import Dashboard from "./components/pages/dashboard-page/dashboard";
 import Admin from "./components/pages/admin-page/admin";
+import AdminLayout from "./components/layout/admin-layout/adminLayout";
+import DashBoardLayout from "./components/layout/dashboard-layout/dashBoardLayout";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -67,9 +69,9 @@ const App = (props) => {
           path="/dashboard"
           render={() => (
             <WithAuth>
-              <Layout>
+              <DashBoardLayout>
                 <Dashboard />
-              </Layout>
+              </DashBoardLayout>
             </WithAuth>
           )}
         />
@@ -77,9 +79,9 @@ const App = (props) => {
           path="/admin"
           render={() => (
             <WithAdminAuth>
-              <Layout>
+              <AdminLayout>
                 <Admin />
-              </Layout>
+              </AdminLayout>
             </WithAdminAuth>
           )}
         />

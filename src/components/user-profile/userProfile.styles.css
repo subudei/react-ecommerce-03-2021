@@ -1,0 +1,39 @@
+.user__profile {
+  display: block;
+  width: 100%;
+  margin: 3rem auto 1rem;
+}
+
+.user__profile ul,
+.user__profile li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.user__profile ul li {
+  display: block;
+  width: 100%;
+}
+
+.user__profile ul li .user__img {
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+}
+
+.user__profile ul li .user__img img {
+  display: block;
+  width: 100%;
+}
+
+.user__profile ul li .user__display__name {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=userProfile.styles.css.map */
