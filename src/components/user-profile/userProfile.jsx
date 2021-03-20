@@ -1,7 +1,8 @@
 import React from "react";
 import "./userProfile.styles.css";
 
-import userIMG from "../../assets/user.png";
+// import userIMG from "../../assets/user.png";
+import { FaUserCircle } from "react-icons/fa";
 
 function UserProfile(props) {
   const { currentUser } = props;
@@ -12,7 +13,7 @@ function UserProfile(props) {
       <ul>
         <li>
           <div className="user__img">
-            <img src={userIMG} />
+            <FaUserCircle className="user__icon" />
           </div>
         </li>
         <li>

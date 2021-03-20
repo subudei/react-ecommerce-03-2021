@@ -17,14 +17,22 @@
 }
 
 .user__profile ul li .user__img {
-  display: block;
-  width: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 10rem;
+  height: 10rem;
   margin: 0 auto;
 }
 
-.user__profile ul li .user__img img {
-  display: block;
-  width: 100%;
+.user__profile ul li .user__img .user__icon {
+  font-size: 7rem;
 }
 
 .user__profile ul li .user__display__name {

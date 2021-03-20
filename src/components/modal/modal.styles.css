@@ -5,18 +5,21 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .modal {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background-color: white;
   width: 95%;
-  padding: 2rem;
+  padding: 10px;
   max-width: 60rem;
   height: auto;
   min-height: 40rem;
-  pointer-events: all;
-  max-height: 95vh;
-  overflow: auto;
+  z-index: 10;
 }
 /*# sourceMappingURL=modal.styles.css.map */

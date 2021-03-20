@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { signOutUserStart } from "../../../redux/user/user.actions";
+
 import Header from "../../header/header";
 import VerticalNav from "../../vertical-nav/verticalNav";
 import Footer from "../../footer/footer";

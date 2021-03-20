@@ -16,13 +16,16 @@
       width: 100%;
 
       .user__img {
-        display: block;
-        width: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10rem;
+        height: 10rem;
         margin: 0 auto;
+        // background-color: rgba(0, 0, 0, 0.2);
 
-        img {
-          display: block;
-          width: 100%;
+        .user__icon {
+          font-size: 7rem;
         }
       }
 
