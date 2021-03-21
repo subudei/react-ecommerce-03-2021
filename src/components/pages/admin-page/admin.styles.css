@@ -28,11 +28,11 @@
   text-transform: uppercase;
 }
 
-.admin__container .admin__manage__products table tr:nth-child(even) {
+.admin__container .admin__manage__products table.results tr:nth-child(even) {
   background-color: #d3d3d3;
 }
 
-.admin__container .admin__manage__products table tr .thumbnail {
+.admin__container .admin__manage__products table.results tr .thumbnail {
   width: 15rem;
   margin: 0 auto;
 }
