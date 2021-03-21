@@ -1,40 +1,42 @@
 import React, { useState, useEffect } from "react";
 import "./admin.styles.css";
 
-import { useDispatch } from "react-redux";
-import { addProductStart } from "../../../redux/products/products.actions";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addProductStart,
+  fetchProductsStart,
+} from "../../../redux/products/products.actions";
 
 import Button from "../../forms/button/button";
 import FormInput from "../../forms/form-input/formInput";
 import FormSelect from "../../forms/form-select/formSelect";
 import Modal from "../../modal/modal";
 
-import { firestore } from "../../../firebase/utils";
+// import { firestore } from "../../../firebase/utils";
+
+const mapState = ({ productsData }) => ({
+  products: productsData.products,
+});
 
 function Admin(props) {
+  const { products } = useSelector(mapState);
   const dispatch = useDispatch();
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const [hideModal, setHideModal] = useState(true);
   const [productCategory, setProductCategory] = useState("gloves");
   const [productName, setProductName] = useState("");
   const [productThumbnail, setProductThumbnail] = useState("");
   const [productPrice, setProductPrice] = useState(0);
 
+  useEffect(() => {
+    dispatch(fetchProductsStart());
+  }, []);
+
   const toggleModal = () => setHideModal(!hideModal);
   const configModal = {
     hideModal,
     toggleModal,
   };
-
-  // useEffect(() => {
-  //   firestore
-  //     .collection("productes")
-  //     .get()
-  //     .then((snapshot) => {
-  //       const snapshotData = snapshot.docs.map((doc) => doc.data());
-  //       setProducts(snapshotData);
-  //     });
-  // }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,17 +49,6 @@ function Admin(props) {
         productPrice,
       })
     );
-
-    // firestore
-    //   .collection("products")
-    //   .doc()
-    //   .set({
-    //     productCategory,
-    //     productName,
-    //     productThumbnail,
-    //     productPrice,
-    //   })
-    //   .then((e) => {});
   };
 
   return (
@@ -116,6 +107,41 @@ function Admin(props) {
           </form>
         </div>
       </Modal>
+      <div className="admin__manage__products">
+        <table border="0" cellPadding="0" cellSpacing="0">
+          <tbody>
+            <tr>
+              <th>
+                <h1>Manage Products</h1>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <table border="0" cellPadding="10" cellSpacing="0">
+                  <tbody>
+                    {products.map((product, index) => {
+                      const {
+                        productName,
+                        productThumbnail,
+                        productPrice,
+                      } = product;
+                      return (
+                        <tr>
+                          <td>
+                            <img className="thumbnail" src={productThumbnail} />
+                          </td>
+                          <td>{productName}</td>
+                          <td>$ {productPrice}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
