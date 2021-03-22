@@ -20,6 +20,7 @@ import Dashboard from "./components/pages/dashboard-page/dashboard";
 import Admin from "./components/pages/admin-page/admin";
 import AdminLayout from "./components/layout/admin-layout/adminLayout";
 import DashBoardLayout from "./components/layout/dashboard-layout/dashBoardLayout";
+import Search from "./components/pages/search-page/search";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -38,6 +39,14 @@ const App = (props) => {
           render={() => (
             <Layout>
               <HomePage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/search"
+          render={() => (
+            <Layout>
+              <Search />
             </Layout>
           )}
         />
