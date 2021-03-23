@@ -5,8 +5,9 @@ export const addProductStart = (productData) => ({
   payload: productData,
 });
 
-export const fetchProductsStart = () => ({
+export const fetchProductsStart = (filters = {}) => ({
   type: productsTypes.FETCH_PRODUCTS_START,
+  payload: filters, //payload for filtering products in ProductResults - useEffect dependency
 });
 
 export const setProducts = (products) => ({

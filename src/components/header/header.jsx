@@ -26,8 +26,7 @@ function Header(props) {
             <h2>Pro Shop</h2>
           </Link>
         </div>
-
-        <nav>
+        <div className="registration__div">
           <ul>
             <li>
               <Link to="/">home</Link>
@@ -36,9 +35,6 @@ function Header(props) {
               <Link to="/search">search</Link>
             </li>
           </ul>
-        </nav>
-
-        <div className="registration__div">
           {currentUser && (
             <ul>
               <li>
