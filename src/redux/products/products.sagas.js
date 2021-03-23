@@ -9,13 +9,20 @@ import {
 } from "./products.helpers";
 
 export function* addProduct({
-  payload: { productCategory, productName, productThumbnail, productPrice },
+  payload: {
+    productCategory,
+    productName,
+    productThumbnail,
+    productDescription,
+    productPrice,
+  },
 }) {
   try {
     const timestamp = new Date();
     yield handleAddProduct({
       productCategory,
       productName,
+      productDescription,
       productThumbnail,
       productPrice,
       productAdminUserUID: auth.currentUser.uid,

@@ -28,6 +28,7 @@ function Admin(props) {
   const [productName, setProductName] = useState("");
   const [productThumbnail, setProductThumbnail] = useState("");
   const [productPrice, setProductPrice] = useState(0);
+  const [productDescription, setProductDescription] = useState("");
 
   useEffect(() => {
     dispatch(fetchProductsStart());
@@ -44,6 +45,7 @@ function Admin(props) {
     setHideModal(true);
     setProductCategory("gloves");
     setProductName("");
+    setProductDescription("");
     setProductThumbnail("");
     setProductPrice(0);
   };
@@ -55,6 +57,7 @@ function Admin(props) {
       addProductStart({
         productCategory,
         productName,
+        productDescription,
         productThumbnail,
         productPrice,
       })
@@ -99,6 +102,15 @@ function Admin(props) {
             />
 
             <FormInput
+              label="Description"
+              type="text"
+              name="productDescription"
+              value={productDescription}
+              placeholder="Add description"
+              handleChange={(e) => setProductDescription(e.target.value)}
+            />
+
+            <FormInput
               label="Main image URL"
               type="url"
               value={productThumbnail}
@@ -139,6 +151,7 @@ function Admin(props) {
                       const {
                         productName,
                         productThumbnail,
+                        productDescription,
                         productPrice,
                         documentID,
                       } = product;
@@ -148,6 +161,7 @@ function Admin(props) {
                             <img className="thumbnail" src={productThumbnail} />
                           </td>
                           <td>{productName}</td>
+                          <td>{productDescription}</td>
                           <td>$ {productPrice}</td>
                           <td>
                             <Button

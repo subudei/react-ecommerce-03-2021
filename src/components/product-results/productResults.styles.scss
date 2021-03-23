@@ -1,0 +1,12 @@
+.products__header {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding: 1rem;
+  // margin: 2rem;
+}

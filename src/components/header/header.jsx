@@ -26,6 +26,18 @@ function Header(props) {
             <h2>Pro Shop</h2>
           </Link>
         </div>
+
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">home</Link>
+            </li>
+            <li>
+              <Link to="/search">search</Link>
+            </li>
+          </ul>
+        </nav>
+
         <div className="registration__div">
           {currentUser && (
             <ul>

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductResults from "../../products/productResults";
+import ProductResults from "../../product-results/productResults";
 
 function Search({}) {
   return (
