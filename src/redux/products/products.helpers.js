@@ -15,22 +15,42 @@ export const handleAddProduct = (product) => {
   });
 };
 
-export const handleFetchProducts = ({ filterType }) => {
+export const handleFetchProducts = ({
+  filterType,
+  startAfterDoc,
+  persistProducts = [], // vraca predhodnih 6 proizvoda,
+}) => {
   return new Promise((resolve, reject) => {
-    let ref = firestore.collection("products").orderBy("createdDate");
+    const pageSize = 6; // generates how mwnu products will apear in products results page
+
+    let ref = firestore
+      .collection("products")
+      .orderBy("createdDate")
+      .limit(pageSize);
 
     if (filterType) ref = ref.where("productCategory", "==", filterType);
+    if (startAfterDoc) ref = ref.startAfter(startAfterDoc);
 
     ref
       .get()
       .then((snapshot) => {
-        const productsArray = snapshot.docs.map((doc) => {
-          return {
-            ...doc.data(),
-            documentID: doc.id,
-          };
+        const totalCount = snapshot.size;
+
+        const data = [
+          ...persistProducts,
+          ...snapshot.docs.map((doc) => {
+            return {
+              ...doc.data(),
+              documentID: doc.id,
+            };
+          }),
+        ];
+
+        resolve({
+          data,
+          queryDoc: snapshot.docs[totalCount - 1],
+          isLastPage: totalCount < 1,
         });
-        resolve(productsArray);
       })
       .catch((err) => {
         reject(err);

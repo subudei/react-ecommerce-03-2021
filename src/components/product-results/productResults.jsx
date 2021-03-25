@@ -7,6 +7,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { fetchProductsStart } from "../../redux/products/products.actions";
 import Product from "../product/product";
 import FormSelect from "../forms/form-select/formSelect";
+import LoadMore from "../load-more/loadMore";
 
 const mapState = ({ productsData }) => ({
   products: productsData.products, // dobija proizvode preko reduxa (useSelector)
@@ -17,6 +18,7 @@ function ProductResults({}) {
   const history = useHistory();
   const { filterType } = useParams();
   const { products } = useSelector(mapState);
+  const { data, queryDoc, isLastPage } = products;
 
   useEffect(() => {
     dispatch(fetchProductsStart({ filterType }));
@@ -27,9 +29,9 @@ function ProductResults({}) {
     history.push(`/search/${nextFilter}`);
   };
 
-  if (!Array.isArray(products)) return null;
+  if (!Array.isArray(data)) return null;
 
-  if (products.length < 1) {
+  if (data.length < 1) {
     return (
       <div className="products">
         <p>No Search Results</p>
@@ -64,12 +66,26 @@ function ProductResults({}) {
     handleChange: handleFilter,
   }; // default params from component FormSelect
 
+  const handleLoadMore = () => {
+    dispatch(
+      fetchProductsStart({
+        filterType,
+        startAfterDoc: queryDoc,
+        persistProducts: data,
+      })
+    );
+  };
+
+  const configLoadMore = {
+    onLoadMoreEvent: handleLoadMore,
+  };
+
   return (
     <>
       <span className="products__header">Browse Products</span>
       <FormSelect {...configFilters} />
       <div className="products">
-        {products.map((product, pos) => {
+        {data.map((product, pos) => {
           const {
             productThumbnail,
             productName,
@@ -91,6 +107,7 @@ function ProductResults({}) {
           return <Product {...configProduct} />;
         })}
       </div>
+      {!isLastPage ? <LoadMore {...configLoadMore} /> : null}
     </>
   );
 }

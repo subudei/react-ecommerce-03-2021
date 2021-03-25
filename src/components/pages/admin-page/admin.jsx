@@ -12,6 +12,7 @@ import Button from "../../forms/button/button";
 import FormInput from "../../forms/form-input/formInput";
 import FormSelect from "../../forms/form-select/formSelect";
 import Modal from "../../modal/modal";
+import LoadMore from "../../load-more/loadMore";
 
 // import { firestore } from "../../../firebase/utils";
 
@@ -29,6 +30,7 @@ function Admin(props) {
   const [productThumbnail, setProductThumbnail] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
+  const { data, queryDoc, isLastPage } = products;
 
   useEffect(() => {
     dispatch(fetchProductsStart());
@@ -63,6 +65,18 @@ function Admin(props) {
       })
     );
     resetForm();
+  };
+
+  const handleLoadMore = () => {
+    dispatch(
+      fetchProductsStart({
+        startAfterDoc: queryDoc,
+        persistProducts: data,
+      })
+    );
+  };
+  const configLoadMore = {
+    onLoadMoreEvent: handleLoadMore,
   };
 
   return (
@@ -147,35 +161,44 @@ function Admin(props) {
                   cellSpacing="0"
                 >
                   <tbody>
-                    {products.map((product, index) => {
-                      const {
-                        productName,
-                        productThumbnail,
-                        productDescription,
-                        productPrice,
-                        documentID,
-                      } = product;
-                      return (
-                        <tr>
-                          <td>
-                            <img className="thumbnail" src={productThumbnail} />
-                          </td>
-                          <td>{productName}</td>
-                          <td>{productDescription}</td>
-                          <td>$ {productPrice}</td>
-                          <td>
-                            <Button
-                              onClick={() =>
-                                dispatch(deleteProductStart(documentID))
-                              }
-                            >
-                              Delete
-                            </Button>
-                          </td>
-                        </tr>
-                      );
-                    })}
+                    {Array.isArray(data) &&
+                      data.length > 0 &&
+                      data.map((product, index) => {
+                        const {
+                          productName,
+                          productThumbnail,
+                          productDescription,
+                          productPrice,
+                          documentID,
+                        } = product;
+                        return (
+                          <tr>
+                            <td>
+                              <img
+                                className="thumbnail"
+                                src={productThumbnail}
+                              />
+                            </td>
+                            <td>{productName}</td>
+                            <td>{productDescription}</td>
+                            <td>$ {productPrice}</td>
+                            <td>
+                              <Button
+                                onClick={() =>
+                                  dispatch(deleteProductStart(documentID))
+                                }
+                              >
+                                Delete
+                              </Button>
+                            </td>
+                          </tr>
+                          //
+                        );
+                      })}
                   </tbody>
+                  <tr>
+                    <td>{!isLastPage && <LoadMore {...configLoadMore} />}</td>
+                  </tr>
                 </table>
               </td>
             </tr>
