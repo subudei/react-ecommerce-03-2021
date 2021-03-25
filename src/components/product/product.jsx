@@ -1,14 +1,23 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import Button from "../forms/button/button";
 import "./product.styles.css";
 
 function Product({
+  documentID,
   productThumbnail,
   productPrice,
   productDescription,
   productName,
 }) {
-  if (!productThumbnail || !productName || typeof productPrice === "undefined")
+  if (
+    !documentID ||
+    !productThumbnail ||
+    !productName ||
+    typeof productPrice === "undefined"
+  )
     return null;
 
   const configAddToCartBtn = {
@@ -18,16 +27,20 @@ function Product({
   return (
     <div className="product">
       <div className="thumbnail">
-        <img src={productThumbnail} alt={productName} />
+        <Link to={`/product/${documentID}`}>
+          <img src={productThumbnail} alt={productName} />
+        </Link>
       </div>
       <div className="details">
         <ul>
           <li>
-            <span className="product__name">{productName}</span>
+            <span className="product__name">
+              <Link to={`/product/${documentID}`}>{productName}</Link>
+            </span>
           </li>
-          <li>
+          {/* <li>
             <span>{productDescription}</span>
-          </li>
+          </li> */}
           <li>
             <span className="product__price">$ {productPrice}</span>
           </li>

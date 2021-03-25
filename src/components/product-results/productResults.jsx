@@ -99,10 +99,7 @@ function ProductResults({}) {
           )
             return null;
           const configProduct = {
-            productThumbnail,
-            productPrice,
-            productDescription,
-            productName,
+            ...product,
           };
           return <Product {...configProduct} />;
         })}
@@ -113,5 +110,3 @@ function ProductResults({}) {
 }
 
 export default ProductResults;
-
-// 18:00

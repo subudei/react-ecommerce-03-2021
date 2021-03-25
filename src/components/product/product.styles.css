@@ -39,6 +39,10 @@
   font-size: 2.5rem;
 }
 
+.product .details .product__name a {
+  color: black;
+}
+
 .product .details .product__price {
   font-style: italic;
 }
