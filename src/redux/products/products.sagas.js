@@ -14,22 +14,24 @@ import {
 } from "./products.helpers";
 
 export function* addProduct({
-  payload: {
-    productCategory,
-    productName,
-    productThumbnail,
-    productDescription,
-    productPrice,
-  },
+  // payload: {
+  //   productCategory,
+  //   productName,
+  //   productThumbnail,
+  //   productDescription,
+  //   productPrice,
+  // },
+  payload,
 }) {
   try {
     const timestamp = new Date();
     yield handleAddProduct({
-      productCategory,
-      productName,
-      productDescription,
-      productThumbnail,
-      productPrice,
+      // productCategory,
+      // productName,
+      // productDescription,
+      // productThumbnail,
+      // productPrice,
+      ...payload,
       productAdminUserUID: auth.currentUser.uid,
       createdDate: timestamp,
     });

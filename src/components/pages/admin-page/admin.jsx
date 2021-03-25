@@ -7,14 +7,13 @@ import {
   fetchProductsStart,
   deleteProductStart,
 } from "../../../redux/products/products.actions";
+import CKEditor from "ckeditor4-react";
 
 import Button from "../../forms/button/button";
 import FormInput from "../../forms/form-input/formInput";
 import FormSelect from "../../forms/form-select/formSelect";
 import Modal from "../../modal/modal";
 import LoadMore from "../../load-more/loadMore";
-
-// import { firestore } from "../../../firebase/utils";
 
 const mapState = ({ productsData }) => ({
   products: productsData.products,
@@ -30,6 +29,7 @@ function Admin(props) {
   const [productThumbnail, setProductThumbnail] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
+
   const { data, queryDoc, isLastPage } = products;
 
   useEffect(() => {
@@ -105,7 +105,6 @@ function Admin(props) {
               ]}
               handleChange={(e) => setProductCategory(e.target.value)}
             />
-
             <FormInput
               label="Name"
               type="text"
@@ -114,23 +113,12 @@ function Admin(props) {
               placeholder="Product Name"
               handleChange={(e) => setProductName(e.target.value)}
             />
-
-            <FormInput
-              label="Description"
-              type="text"
-              name="productDescription"
-              value={productDescription}
-              placeholder="Add description"
-              handleChange={(e) => setProductDescription(e.target.value)}
-            />
-
             <FormInput
               label="Main image URL"
               type="url"
               value={productThumbnail}
               handleChange={(e) => setProductThumbnail(e.target.value)}
             />
-
             <FormInput
               label="Price"
               type="number"
@@ -139,6 +127,9 @@ function Admin(props) {
               step="0.01"
               value={productPrice}
               handleChange={(e) => setProductPrice(e.target.value)}
+            />
+            <CKEditor
+              onChange={(e) => setProductDescription(e.editor.getData())}
             />
             <Button type="submit">Add product</Button>
           </form>
@@ -167,7 +158,6 @@ function Admin(props) {
                         const {
                           productName,
                           productThumbnail,
-                          productDescription,
                           productPrice,
                           documentID,
                         } = product;
@@ -180,7 +170,6 @@ function Admin(props) {
                               />
                             </td>
                             <td>{productName}</td>
-                            <td>{productDescription}</td>
                             <td>$ {productPrice}</td>
                             <td>
                               <Button

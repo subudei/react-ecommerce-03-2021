@@ -8,6 +8,7 @@ import {
   fetchProductStart,
   setProduct,
 } from "../../redux/products/products.actions";
+import Button from "../forms/button/button";
 
 const mapState = (state) => ({
   product: state.productsData.product,
@@ -18,15 +19,44 @@ function ProductCard({}) {
   const { productID } = useParams();
   const { product } = useSelector(mapState);
 
-  const { productName } = product;
+  const {
+    productName,
+    productThumbnail,
+    productPrice,
+    productDescription,
+  } = product;
 
   useEffect(() => {
     dispatch(fetchProductStart(productID));
+
+    return () => {
+      dispatch(setProduct({})); // clean up last opened product, fixing bug
+    };
   }, []);
 
+  const configAddToCart = {
+    type: "button",
+  };
+
   return (
-    <div>
-      <h1>{productName}</h1>
+    <div className="product__card__container">
+      <div className="product__card__hero">
+        <img src={productThumbnail} alt={productName} />
+      </div>
+      <div className="product__card__details">
+        <ul>
+          <li>
+            <h1>{productName}</h1>
+          </li>
+          <li>
+            <span>$ {productPrice}</span>
+          </li>
+          <span dangerouslySetInnerHTML={{ __html: productDescription }} />
+          <div className="product__card__add__to__cart">
+            <Button {...configAddToCart}>Add to cart</Button>
+          </div>
+        </ul>
+      </div>
     </div>
   );
 }

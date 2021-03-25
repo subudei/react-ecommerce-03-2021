@@ -1,1 +1,36 @@
-/* No CSS *//*# sourceMappingURL=productCard.styles.css.map */
+.product__card__container {
+  max-width: 80rem;
+  margin: 0 auto 10rem;
+}
+
+.product__card__container .product__card__hero {
+  display: block;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.product__card__container .product__card__hero img {
+  display: block;
+  width: 70%;
+  margin: 0;
+}
+
+.product__card__container .product__card__details ul,
+.product__card__container .product__card__details ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.product__card__container .product__card__details ul li {
+  list-style-type: none;
+  margin: 0 auto 1rem;
+}
+
+.product__card__container .product__card__details ul li h1 {
+  margin: 0;
+}
+
+.product__card__container .product__card__add__to__cart {
+  max-width: 20rem;
+}
+/*# sourceMappingURL=productCard.styles.css.map */
