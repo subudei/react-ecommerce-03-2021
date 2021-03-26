@@ -8,6 +8,8 @@ import {
   fetchProductStart,
   setProduct,
 } from "../../redux/products/products.actions";
+import { addProduct } from "../../redux/cart/cart.actions";
+
 import Button from "../forms/button/button";
 
 const mapState = (state) => ({
@@ -37,6 +39,10 @@ function ProductCard({}) {
   const configAddToCart = {
     type: "button",
   };
+  const handleAddToCart = (product) => {
+    if (!product) return;
+    dispatch(addProduct(product));
+  };
 
   return (
     <div className="product__card__container">
@@ -53,7 +59,12 @@ function ProductCard({}) {
           </li>
           <span dangerouslySetInnerHTML={{ __html: productDescription }} />
           <div className="product__card__add__to__cart">
-            <Button {...configAddToCart}>Add to cart</Button>
+            <Button
+              {...configAddToCart}
+              onClick={() => handleAddToCart(product)}
+            >
+              Add to cart
+            </Button>
           </div>
         </ul>
       </div>
