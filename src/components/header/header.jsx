@@ -3,16 +3,18 @@ import "./header.styles.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 
 import { signOutUserStart } from "../../redux/user/user.actions";
 
-const mapState = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapState = (state) => ({
+  currentUser: state.user.currentUser,
+  totalNumCartItems: selectCartItemsCount(state),
 }); // mapira state koji se nalazi u storu, a koji povlaci kroz useSelector, i dobijam currentUser varijablu (state)
 
 function Header(props) {
   const dispatch = useDispatch();
-  const { currentUser } = useSelector(mapState);
+  const { currentUser, totalNumCartItems } = useSelector(mapState);
 
   const signOut = () => {
     dispatch(signOutUserStart());
@@ -45,6 +47,7 @@ function Header(props) {
               </li>
             </ul>
           )}
+
           {!currentUser && (
             <ul>
               <li>
@@ -55,6 +58,9 @@ function Header(props) {
               </li>
             </ul>
           )}
+          <div className="header__cart">
+            <Link to="/cart">CART ({totalNumCartItems})</Link>
+          </div>
         </div>
       </div>
     </div>
