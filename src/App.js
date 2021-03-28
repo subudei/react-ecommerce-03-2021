@@ -22,6 +22,7 @@ import AdminLayout from "./components/layout/admin-layout/adminLayout";
 import DashBoardLayout from "./components/layout/dashboard-layout/dashBoardLayout";
 import Search from "./components/pages/search-page/search";
 import ProductPage from "./components/pages/product-page/productPage";
+import Cart from "./components/pages/cart-page/cart";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -65,6 +66,14 @@ const App = (props) => {
           render={() => (
             <Layout>
               <ProductPage />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/cart"
+          render={() => (
+            <Layout>
+              <Cart />
             </Layout>
           )}
         />
