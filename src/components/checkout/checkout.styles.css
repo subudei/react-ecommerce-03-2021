@@ -3,8 +3,10 @@
 }
 
 .checkout__container h1 {
+  font-weight: 600;
   display: block;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .checkout__container h1,
@@ -13,12 +15,19 @@
 }
 
 .checkout__container .checkout__header {
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   border-bottom: 0.1rem solid black;
 }
 
 .checkout__container .cart {
   max-width: 100rem;
   margin: 0 auto;
+}
+
+.checkout__container .cart table {
+  width: 100%;
 }
 
 .checkout__container .checkout__header,
@@ -38,5 +47,10 @@
 .checkout__container .cart .cart__item td img {
   display: block;
   width: 100%;
+}
+
+.checkout__container .checkout__header .cart__item .item__btn,
+.checkout__container .cart .cart__item .item__btn {
+  cursor: pointer;
 }
 /*# sourceMappingURL=checkout.styles.css.map */

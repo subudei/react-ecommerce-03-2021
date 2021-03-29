@@ -1,7 +1,7 @@
 import React from "react";
 import "./product.styles.css";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { addProduct } from "../../redux/cart/cart.actions";
@@ -9,6 +9,7 @@ import { addProduct } from "../../redux/cart/cart.actions";
 import Button from "../forms/button/button";
 
 function Product(product) {
+  const history = useHistory();
   const dispatch = useDispatch();
   const {
     documentID,
@@ -33,6 +34,7 @@ function Product(product) {
   const handleAddToCart = (product) => {
     if (!product) return;
     dispatch(addProduct(product));
+    history.push("/cart");
   };
 
   return (

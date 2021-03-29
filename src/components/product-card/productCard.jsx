@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./productCard.styles.css";
 
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -17,6 +17,7 @@ const mapState = (state) => ({
 });
 
 function ProductCard({}) {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { productID } = useParams();
   const { product } = useSelector(mapState);
@@ -42,6 +43,7 @@ function ProductCard({}) {
   const handleAddToCart = (product) => {
     if (!product) return;
     dispatch(addProduct(product));
+    history.push("/cart");
   };
 
   return (
