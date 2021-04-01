@@ -23,6 +23,7 @@ import DashBoardLayout from "./components/layout/dashboard-layout/dashBoardLayou
 import Search from "./components/pages/search-page/search";
 import ProductPage from "./components/pages/product-page/productPage";
 import Cart from "./components/pages/cart-page/cart";
+import PaymentPage from "./components/pages/payment-page/paymentPage";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -74,6 +75,14 @@ const App = (props) => {
           render={() => (
             <Layout>
               <Cart />
+            </Layout>
+          )}
+        />
+        <Route
+          path="/payment"
+          render={() => (
+            <Layout>
+              <PaymentPage />
             </Layout>
           )}
         />

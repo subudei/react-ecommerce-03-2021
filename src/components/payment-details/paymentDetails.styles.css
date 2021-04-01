@@ -1,0 +1,12 @@
+.payment__details {
+  display: block;
+  width: 100%;
+  max-width: 100rem;
+  padding: 0;
+  margin: 3rem auto;
+}
+
+.payment__details .pd__group {
+  margin: 0 0 2rem;
+}
+/*# sourceMappingURL=paymentDetails.styles.css.map */
