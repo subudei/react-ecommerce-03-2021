@@ -101,7 +101,7 @@ function ProductResults({}) {
           const configProduct = {
             ...product,
           };
-          return <Product {...configProduct} />;
+          return <Product {...configProduct} key={pos} />;
         })}
       </div>
       {!isLastPage ? <LoadMore {...configLoadMore} /> : null}

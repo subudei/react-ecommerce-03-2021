@@ -74,27 +74,29 @@ function Checkout({}) {
                   cellPadding="10"
                   cellSpacing="0"
                 >
-                  <tr align="right">
-                    <td>
-                      <h3>Total: {total.toFixed(2)}</h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <table border="0" cellSpacing="10" cellPadding="0">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <Button onClick={() => history.goBack()}>
-                              Continue Shoping
-                            </Button>
-                          </td>
-                          <td>
-                            <Button>Checkout</Button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </tr>
+                  <tbody>
+                    <tr align="right">
+                      <td>
+                        <h3>Total: {total.toFixed(2)}</h3>
+                      </td>
+                    </tr>
+                    <tr>
+                      <table border="0" cellSpacing="10" cellPadding="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <Button onClick={() => history.goBack()}>
+                                Continue Shoping
+                              </Button>
+                            </td>
+                            <td>
+                              <Button>Checkout</Button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </tr>
+                  </tbody>
                 </table>
               </tr>
             </tbody>
