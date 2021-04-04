@@ -81,9 +81,11 @@ const App = (props) => {
         <Route
           path="/payment"
           render={() => (
-            <Layout>
-              <PaymentPage />
-            </Layout>
+            <WithAuth>
+              <Layout>
+                <PaymentPage />
+              </Layout>
+            </WithAuth>
           )}
         />
         <Route

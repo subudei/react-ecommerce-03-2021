@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./paymentDetails.styles.css";
 
 import { CountryDropdown } from "react-country-region-selector";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { createStructuredSelector } from "reselect";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import Button from "../forms/button/button";
 import FormInput from "../forms/form-input/formInput";
 
 import { apiInstance } from "../../utils/index";
-import { selectCartTotal } from "../../redux/cart/cart.selectors";
+import {
+  selectCartTotal,
+  selectCartItemsCount,
+  selectCartItems,
+} from "../../redux/cart/cart.selectors";
+import { clearCart } from "../../redux/cart/cart.actions";
+import { saveOrderHistory } from "../../redux/orders/orders.actions";
 
 const initialAddressState = {
   line1: "",
@@ -23,12 +30,16 @@ const initialAddressState = {
 
 const mapState = createStructuredSelector({
   total: selectCartTotal,
+  itemCount: selectCartItemsCount,
+  cartItems: selectCartItems,
 });
 
 function PaymentDetails() {
   const elements = useElements();
   const stripe = useStripe();
-  const { total } = useSelector(mapState);
+  const dispatch = useDispatch();
+  const { total, itemCount, cartItems } = useSelector(mapState);
+  const history = useHistory();
   const [billingAddress, setBillingAddress] = useState({
     ...initialAddressState,
   });
@@ -37,6 +48,12 @@ function PaymentDetails() {
   });
   const [recipientName, setRecipientName] = useState("");
   const [nameOnCard, setNameOnCard] = useState("");
+
+  useEffect(() => {
+    if (itemCount < 1) {
+      history.push("/dashboard");
+    }
+  }, [itemCount]);
 
   const handleShipping = (e) => {
     const { name, value } = e.target;
@@ -103,7 +120,26 @@ function PaymentDetails() {
                 payment_method: paymentMethod.id,
               })
               .then(({ paymentIntent }) => {
-                console.log(paymentIntent);
+                const configOrder = {
+                  orderTotal: total,
+                  orderItems: cartItems.map((item) => {
+                    const {
+                      documentID,
+                      productName,
+                      productPrice,
+                      productThumbnail,
+                      quantity,
+                    } = item;
+                    return {
+                      documentID,
+                      productThumbnail,
+                      productName,
+                      productPrice,
+                      quantity,
+                    };
+                  }),
+                };
+                dispatch(saveOrderHistory(configOrder));
               });
           });
       });
