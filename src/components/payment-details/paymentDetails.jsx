@@ -16,7 +16,7 @@ import {
   selectCartItemsCount,
   selectCartItems,
 } from "../../redux/cart/cart.selectors";
-import { clearCart } from "../../redux/cart/cart.actions";
+// import { clearCart } from "../../redux/cart/cart.actions";
 import { saveOrderHistory } from "../../redux/orders/orders.actions";
 
 const initialAddressState = {
