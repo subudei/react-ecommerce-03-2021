@@ -9,8 +9,9 @@ import {
   TableCell,
 } from "@material-ui/core";
 import moment from "moment";
+import { useHistory } from "react-router-dom";
 
-const colums = [
+const columns = [
   {
     id: "orderCreatedDate",
     lable: "Order Date",
@@ -43,12 +44,14 @@ const formatText = (columnName, columnValue) => {
 };
 
 function OrderHistory({ orders }) {
+  const history = useHistory();
+
   return (
     <TableContainer>
       <Table>
         <TableHead>
           <TableRow>
-            {colums.map((column, pos) => {
+            {columns.map((column, pos) => {
               const { lable } = column;
               return (
                 <TableCell key={pos} style={styles}>
@@ -62,9 +65,14 @@ function OrderHistory({ orders }) {
           {Array.isArray(orders) &&
             orders.length > 0 &&
             orders.map((row, pos) => {
+              const { documentID } = row;
+
               return (
-                <TableRow key={pos}>
-                  {colums.map((column, pos) => {
+                <TableRow
+                  key={pos}
+                  onClick={() => history.push(`/order/${documentID}`)}
+                >
+                  {columns.map((column, pos) => {
                     const columnName = column.id;
                     const columnValue = row[columnName];
                     const formatedText = formatText(columnName, columnValue);

@@ -24,6 +24,7 @@ import Search from "./components/pages/search-page/search";
 import ProductPage from "./components/pages/product-page/productPage";
 import Cart from "./components/pages/cart-page/cart";
 import PaymentPage from "./components/pages/payment-page/paymentPage";
+import Order from "./components/pages/order-page/order";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -118,6 +119,16 @@ const App = (props) => {
             <WithAuth>
               <DashBoardLayout>
                 <Dashboard />
+              </DashBoardLayout>
+            </WithAuth>
+          )}
+        />
+        <Route
+          path="/order/:orderID"
+          render={() => (
+            <WithAuth>
+              <DashBoardLayout>
+                <Order />
               </DashBoardLayout>
             </WithAuth>
           )}
