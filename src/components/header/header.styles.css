@@ -1,21 +1,28 @@
 .header__container {
   height: 6.5rem;
+  width: 100%;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header__container .header__wrap {
   height: 100%;
-  position: relative;
-  max-width: 1450px;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 1050px;
+  margin-left: 2rem;
 }
 
 .header__container .header__wrap .header__logo {
-  position: absolute;
-  width: 10rem;
   height: 100%;
-  left: 1rem;
+  width: 15rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,20 +33,23 @@
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-}
-
-.header__container .header__wrap .header__logo h2 {
-  font-size: 2rem;
-}
-
-.header__container .header__wrap .header__logo a {
   color: black;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
 }
 
 .header__container .header__wrap .registration__div {
-  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
-  right: 1rem;
+  margin-right: 1rem;
+}
+
+.header__container .header__wrap .registration__div .registration__links {
+  height: 100%;
+  margin-left: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,26 +59,87 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
-  margin: auto;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
 }
 
-.header__container .header__wrap .registration__div ul {
+.header__container .header__wrap .registration__div .current__user__links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100%;
 }
 
-.header__container .header__wrap .registration__div ul li {
-  list-style: none;
-  margin-left: 1rem;
-}
-
-.header__container .header__wrap .registration__div ul li a {
-  font-size: 1.5rem;
-  line-height: 1;
-  color: black;
-  text-decoration: none;
+.header__container .header__wrap .registration__div .current__user__links .registration__logout {
+  height: 100%;
+  margin-left: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-transform: uppercase;
+  color: black;
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.header__container .header__wrap .registration__div .registration__cart {
+  height: 100%;
+  margin-left: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+}
+
+.header__container .header__wrap .registration__div .registration__cart .cart__icon {
+  margin-left: auto;
+  cursor: pointer;
+  width: 3rem;
+  height: 100%;
+  position: relative;
+  font-size: 0.5rem;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__container .header__wrap .registration__div .registration__cart .cart__icon .cart__count {
+  position: absolute;
+  top: 1.3rem;
+  right: -0.1rem;
+  background: crimson;
+  font-size: 10px;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 50%;
+  z-index: -1;
 }
 /*# sourceMappingURL=header.styles.css.map */

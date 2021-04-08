@@ -9,4 +9,9 @@
   height: 100%;
   width: 100%;
 }
+
+.layout__container .layout__children {
+  min-height: 90vh;
+  width: 100%;
+}
 /*# sourceMappingURL=layout.styles.css.map */

@@ -3,8 +3,9 @@ import "./header.styles.css";
 
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
+import { FaShoppingCart } from "react-icons/fa";
 
+import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import { signOutUserStart } from "../../redux/user/user.actions";
 
 const mapState = (state) => ({
@@ -23,43 +24,46 @@ function Header(props) {
   return (
     <div className="header__container">
       <div className="header__wrap">
-        <div className="header__logo">
-          <Link to="/">
-            <h2>Pro Shop</h2>
-          </Link>
-        </div>
+        <Link className="header__logo" to="/">
+          pro shop
+        </Link>
+
         <div className="registration__div">
-          <ul>
-            <li>
-              <Link to="/">home</Link>
-            </li>
-            <li>
-              <Link to="/search">search</Link>
-            </li>
-          </ul>
+          <Link className="registration__links" to="/">
+            home
+          </Link>
+
+          <Link className="registration__links" to="/search">
+            search
+          </Link>
+
           {currentUser && (
-            <ul>
-              <li>
-                <Link to="/dashboard">My Account</Link>
-              </li>
-              <li>
-                <span onClick={() => signOut()}>LOGOUT</span>
-              </li>
-            </ul>
+            <div className="current__user__links">
+              <Link className="registration__links" to="/dashboard">
+                My Account
+              </Link>
+
+              <span className="registration__logout" onClick={() => signOut()}>
+                LOGOUT
+              </span>
+            </div>
           )}
 
           {!currentUser && (
-            <ul>
-              <li>
-                <Link to="/registration">Register</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-            </ul>
+            <div className="current__user__links">
+              <Link className="registration__links" to="/registration">
+                Register
+              </Link>
+              <Link className="registration__links" to="/login">
+                Login
+              </Link>
+            </div>
           )}
-          <div className="header__cart">
-            <Link to="/cart">CART ({totalNumCartItems})</Link>
+          <div className="registration__cart">
+            <Link className="cart__icon" to="/cart">
+              <span className="cart__count">{totalNumCartItems}</span>
+              <FaShoppingCart />
+            </Link>
           </div>
         </div>
       </div>
