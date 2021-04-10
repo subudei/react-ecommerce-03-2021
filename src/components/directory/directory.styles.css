@@ -1,0 +1,56 @@
+.directory__container {
+  width: 100%;
+}
+
+.directory__container .directory__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  height: 75vh;
+  margin: auto;
+}
+
+.directory__container .directory__item .directory__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.directory__container .directory__item .directory__link .directory__img__wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.directory__container .directory__item .directory__link .directory__img__wrap .directory__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.directory__container .directory__item .directory__link .directory__img__wrap .directory__img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.directory__container .left {
+  margin-left: 0;
+}
+
+.directory__container .right {
+  margin-right: 0;
+}
+/*# sourceMappingURL=directory.styles.css.map */

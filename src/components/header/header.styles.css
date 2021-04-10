@@ -133,8 +133,8 @@
 
 .header__container .header__wrap .registration__div .registration__cart .cart__icon .cart__count {
   position: absolute;
-  top: 1.3rem;
-  right: -0.1rem;
+  top: 1.4rem;
+  right: -0.5rem;
   background: crimson;
   font-size: 10px;
   color: white;
