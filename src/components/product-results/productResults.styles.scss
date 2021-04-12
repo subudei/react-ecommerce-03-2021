@@ -1,7 +1,12 @@
 .products__header {
-  font-size: 3rem;
-  margin: 1.5rem 0;
-  text-transform: uppercase;
+  margin: 1.5rem 2.5rem 1rem;
+  // display: flex;
+  // align-items: flex-start;
+
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
 }
 .products {
   display: grid;

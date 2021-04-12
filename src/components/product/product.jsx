@@ -47,15 +47,12 @@ function Product(product) {
       <div className="details">
         <ul>
           <li>
-            <span className="product__name">
+            <div className="product__name">
               <Link to={`/product/${documentID}`}>{productName}</Link>
-            </span>
+            </div>
           </li>
-          {/* <li>
-            <span>{productDescription}</span>
-          </li> */}
           <li>
-            <span className="product__price">$ {productPrice}</span>
+            <div className="product__price">$ {productPrice}</div>
           </li>
           <li>
             <div className="add__to__cart">

@@ -6,6 +6,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   height: 30vh;
   -webkit-box-align: center;
@@ -17,7 +21,16 @@
 }
 
 .home__container .home__title h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   letter-spacing: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+.home__container .home__title p {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  background-color: #ff2600;
+  color: white;
+  padding: 1rem;
 }
 /*# sourceMappingURL=homePage.styles.css.map */

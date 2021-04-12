@@ -23,6 +23,9 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  text-align: center;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .directory__container .directory__item .directory__link .directory__img__wrap .directory__img {
@@ -41,16 +44,28 @@
   transition: all 0.2s linear;
 }
 
-.directory__container .directory__item .directory__link .directory__img__wrap .directory__img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.directory__container .directory__item .directory__link .directory__img__wrap .directory__link__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #ff2600;
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: 1rem;
+}
+
+.directory__container .directory__item .directory__link .directory__img__wrap:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .directory__container .left {
-  margin-left: 0;
+  margin-left: 5rem;
 }
 
 .directory__container .right {
-  margin-right: 0;
+  margin-right: 5rem;
 }
 /*# sourceMappingURL=directory.styles.css.map */

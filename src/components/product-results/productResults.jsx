@@ -82,8 +82,11 @@ function ProductResults({}) {
 
   return (
     <>
-      <span className="products__header">Browse Products</span>
-      <FormSelect {...configFilters} />
+      <div className="products__header">
+        <h2>Browse Products</h2>
+        <FormSelect {...configFilters} />
+      </div>
+
       <div className="products">
         {data.map((product, pos) => {
           const {
