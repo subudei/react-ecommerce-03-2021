@@ -25,7 +25,8 @@ function Header(props) {
     <div className="header__container">
       <div className="header__wrap">
         <Link className="header__logo" to="/">
-          pro shop
+          <span className="logo__span">shop</span>
+          <h1 className="logo__name">pro</h1>
         </Link>
 
         <div className="registration__div">

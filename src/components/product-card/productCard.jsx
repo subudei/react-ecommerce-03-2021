@@ -48,27 +48,23 @@ function ProductCard({}) {
 
   return (
     <div className="product__card__container">
-      <div className="product__card__hero">
+      <div className="product__card__img">
         <img src={productThumbnail} alt={productName} />
       </div>
       <div className="product__card__details">
-        <ul>
-          <li>
-            <h1>{productName}</h1>
-          </li>
-          <li>
-            <span>$ {productPrice}</span>
-          </li>
-          <span dangerouslySetInnerHTML={{ __html: productDescription }} />
-          <div className="product__card__add__to__cart">
-            <Button
-              {...configAddToCart}
-              onClick={() => handleAddToCart(product)}
-            >
-              Add to cart
-            </Button>
-          </div>
-        </ul>
+        <h1 className="product__card__name">{productName}</h1>
+
+        <h2 className="product__card__price">$ {productPrice}</h2>
+
+        <span
+          className="product__card__description"
+          dangerouslySetInnerHTML={{ __html: productDescription }}
+        />
+        <div className="product__card__add__to__cart">
+          <Button {...configAddToCart} onClick={() => handleAddToCart(product)}>
+            Add to cart
+          </Button>
+        </div>
       </div>
     </div>
   );
