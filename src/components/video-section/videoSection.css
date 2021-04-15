@@ -1,0 +1,45 @@
+.video__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 70rem;
+  margin: auto;
+  margin-bottom: 5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+
+.video__container .video__overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.video__container .video__overlay p {
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+  color: #ff2600;
+}
+/*# sourceMappingURL=videoSection.css.map */

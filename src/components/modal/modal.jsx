@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./modal.styles.css";
 
 function Modal({ hideModal, toggleModal, children }) {
@@ -6,9 +6,8 @@ function Modal({ hideModal, toggleModal, children }) {
   return (
     <>
       <div className="modal__overlay" onClick={() => toggleModal()} />
-      {/* <div className="modal__wrap"> */}
+
       <div className="modal">{children}</div>
-      {/* </div> */}
     </>
   );
 }

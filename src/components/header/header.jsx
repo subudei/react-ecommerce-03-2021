@@ -7,6 +7,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import { signOutUserStart } from "../../redux/user/user.actions";
+import { clearCart } from "../../redux/cart/cart.actions";
 
 const mapState = (state) => ({
   currentUser: state.user.currentUser,
@@ -19,6 +20,7 @@ function Header(props) {
 
   const signOut = () => {
     dispatch(signOutUserStart());
+    dispatch(clearCart());
   };
 
   return (
@@ -35,7 +37,7 @@ function Header(props) {
           </Link>
 
           <Link className="registration__links" to="/search">
-            search
+            products
           </Link>
 
           {currentUser && (

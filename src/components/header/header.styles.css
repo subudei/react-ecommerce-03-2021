@@ -41,7 +41,7 @@
 
 .header__container .header__wrap .header__logo .logo__name {
   position: relative;
-  color: orangered;
+  color: #ff2600;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,18 +51,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 5.5rem;
+  font-size: 6rem;
   font-weight: 900;
 }
 
 .header__container .header__wrap .header__logo .logo__span {
   color: black;
   font-size: 2.5rem;
-  letter-spacing: 1.8rem;
-  font-weight: 500;
+  letter-spacing: 1.3rem;
+  font-weight: 550;
+  text-shadow: 2px 1px white;
   position: absolute;
   top: 3.2rem;
-  left: 3.7rem;
+  left: 3.8rem;
   z-index: 1;
 }
 
@@ -93,8 +94,8 @@
   font-size: 1.4rem;
 }
 
-.header__container .header__wrap .registration__div .registration__links:active {
-  background-color: blue;
+.header__container .header__wrap .registration__div .registration__links:hover {
+  color: #ff2600;
 }
 
 .header__container .header__wrap .registration__div .current__user__links {

@@ -3,10 +3,11 @@
 }
 
 .checkout__container h1 {
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 500;
   display: block;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .checkout__container h1,

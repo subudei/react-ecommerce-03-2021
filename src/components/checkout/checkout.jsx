@@ -23,7 +23,7 @@ function Checkout({}) {
   const { cartItems, total } = useSelector(mapState);
   return (
     <div className="checkout__container">
-      <h1>Checkout</h1>
+      <h1>Your Cart</h1>
       <div className="cart">
         {cartItems.length > 0 ? (
           <table
@@ -33,24 +33,23 @@ function Checkout({}) {
             cellSpacing="0"
           >
             <tbody>
-              <tr>
-                <table
-                  className="checkout__header"
-                  border="0"
-                  cellPadding="0"
-                  cellSpacing="0"
-                >
-                  <tbody>
-                    <tr>
-                      <th>Product</th>
-                      <th>Description</th>
-                      <th>Quantity</th>
-                      <th>Price</th>
-                      <th>Remove</th>
-                    </tr>
-                  </tbody>
-                </table>
-              </tr>
+              <table
+                className="checkout__header"
+                border="0"
+                cellPadding="0"
+                cellSpacing="0"
+              >
+                <tbody>
+                  <tr>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                  </tr>
+                </tbody>
+              </table>
+
               <tr>
                 <table border="0" cellSpacing="0" cellPadding="0">
                   <tbody>
