@@ -19,6 +19,7 @@
 }
 
 .product__card__container .product__card__details {
+  margin-top: 5rem;
   max-width: 50vw;
   padding: 2rem;
   display: -webkit-box;

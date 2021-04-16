@@ -26,10 +26,12 @@ function Header(props) {
   return (
     <div className="header__container">
       <div className="header__wrap">
-        <Link className="header__logo" to="/">
-          <span className="logo__span">shop</span>
-          <h1 className="logo__name">pro</h1>
-        </Link>
+        <div className="logo__wrap">
+          <Link className="header__logo" to="/">
+            <span className="logo__span">shop</span>
+            <h1 className="logo__name">pro</h1>
+          </Link>
+        </div>
 
         <div className="registration__div">
           <Link className="registration__links" to="/">

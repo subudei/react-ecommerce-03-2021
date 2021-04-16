@@ -37,9 +37,18 @@
   z-index: 2;
 }
 
+.video__container .video__overlay .video__shop__name {
+  font-size: 3.2rem;
+  font-weight: 600;
+  letter-spacing: 0.25rem;
+  color: #ff2600;
+}
+
 .video__container .video__overlay p {
   font-size: 3rem;
   letter-spacing: 0.15rem;
-  color: #ff2600;
+  color: white;
+  font-weight: 600;
+  line-height: 1.5;
 }
 /*# sourceMappingURL=videoSection.css.map */

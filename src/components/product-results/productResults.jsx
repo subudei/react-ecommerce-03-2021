@@ -89,12 +89,7 @@ function ProductResults({}) {
 
       <div className="products">
         {data.map((product, pos) => {
-          const {
-            productThumbnail,
-            productName,
-            productDescription,
-            productPrice,
-          } = product;
+          const { productThumbnail, productName, productPrice } = product;
           if (
             !productThumbnail ||
             !productName ||

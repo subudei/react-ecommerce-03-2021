@@ -82,11 +82,7 @@ function Admin(props) {
   return (
     <div className="admin__container">
       <div className="admin__call__to__actions">
-        <ul>
-          <li>
-            <Button onClick={() => toggleModal()}>Add New Product</Button>
-          </li>
-        </ul>
+        <Button onClick={() => toggleModal()}>Add New Product</Button>
       </div>
       <Modal {...configModal}>
         <div className="add__new__product__form">
@@ -136,6 +132,41 @@ function Admin(props) {
         </div>
       </Modal>
       <div className="admin__manage__products">
+        <h1>Current Products Data</h1>
+        {Array.isArray(data) &&
+          data.length > 0 &&
+          data.map((product) => {
+            const {
+              productName,
+              productThumbnail,
+              productPrice,
+              documentID,
+            } = product;
+            return (
+              <div key={documentID} className="product__data">
+                <div className="pd__thumbnail">
+                  <img
+                    className="thumbnail"
+                    src={productThumbnail}
+                    alt={productName}
+                  />
+                </div>
+                <div className="pd__name">{productName}</div>
+                <div className="pd__price">$ {productPrice}</div>
+                <div className="pd__button">
+                  <Button
+                    onClick={() => dispatch(deleteProductStart(documentID))}
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </div>
+            );
+          })}
+        {!isLastPage && <LoadMore {...configLoadMore} />}
+      </div>
+
+      {/* <div className="admin__manage__products">
         <table border="0" cellPadding="0" cellSpacing="0">
           <tbody>
             <tr>
@@ -154,7 +185,7 @@ function Admin(props) {
                   <tbody>
                     {Array.isArray(data) &&
                       data.length > 0 &&
-                      data.map((product, index) => {
+                      data.map((product) => {
                         const {
                           productName,
                           productThumbnail,
@@ -162,7 +193,7 @@ function Admin(props) {
                           documentID,
                         } = product;
                         return (
-                          <tr>
+                          <tr key={documentID}>
                             <td>
                               <img
                                 className="thumbnail"
@@ -193,7 +224,7 @@ function Admin(props) {
             </tr>
           </tbody>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 }

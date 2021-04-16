@@ -24,7 +24,7 @@ function AdminLayout(props) {
           <VerticalNav>
             <ul>
               <li>
-                <Link to="/admin">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <span className="admin__sign__out" onClick={() => signOut()}>

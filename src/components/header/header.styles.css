@@ -20,7 +20,16 @@
   margin-left: 2rem;
 }
 
-.header__container .header__wrap .header__logo {
+.header__container .header__wrap .logo__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 15rem;
+  position: relative;
+}
+
+.header__container .header__wrap .logo__wrap .header__logo {
   height: 100%;
   width: 15rem;
   display: -webkit-box;
@@ -39,7 +48,7 @@
   letter-spacing: 0.15rem;
 }
 
-.header__container .header__wrap .header__logo .logo__name {
+.header__container .header__wrap .logo__wrap .header__logo .logo__name {
   position: relative;
   color: #ff2600;
   display: -webkit-box;
@@ -55,15 +64,15 @@
   font-weight: 900;
 }
 
-.header__container .header__wrap .header__logo .logo__span {
+.header__container .header__wrap .logo__wrap .header__logo .logo__span {
   color: black;
   font-size: 2.5rem;
   letter-spacing: 1.3rem;
   font-weight: 550;
-  text-shadow: 2px 1px white;
+  text-shadow: 1px 1px white;
   position: absolute;
   top: 3.2rem;
-  left: 3.8rem;
+  left: 1.3rem;
   z-index: 1;
 }
 
