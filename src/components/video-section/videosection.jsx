@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 
 import Video from "../../assets/sparring_video.mp4";
 
-function Videosection() {
+function VideoSection() {
   return (
     <div className="video__container">
-      {/* <video className="video__play" autoPlay loop muted>
-        <source src={Video} type="video/mp4" />
-      </video> */}
       <video src={Video} autoPlay loop muted type="video/mp4" />
       <div className="video__overlay">
         <p>
@@ -28,4 +25,4 @@ function Videosection() {
   );
 }
 
-export default Videosection;
+export default VideoSection;

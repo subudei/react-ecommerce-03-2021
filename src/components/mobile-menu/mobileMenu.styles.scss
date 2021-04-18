@@ -1,0 +1,55 @@
+.mobile__menu__links {
+  position: sticky;
+  top: 50vh;
+  height: 40vh;
+  background-color: black;
+  width: 80%;
+  margin: auto;
+  border: none;
+  border-radius: 3.5rem;
+  z-index: 4;
+
+  .menu__link {
+    height: 19%;
+    width: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      color: orangered;
+    }
+  }
+}
+
+.mobile__menu__button {
+  position: sticky;
+  top: 80vh;
+  height: 10vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border: none;
+  border-radius: 3.5rem;
+  margin: auto;
+  z-index: 5;
+  cursor: pointer;
+
+  .button__icon {
+    color: white;
+    font-size: 2.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .button__title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 0.2rem;
+  }
+}

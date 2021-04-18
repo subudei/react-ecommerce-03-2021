@@ -8,9 +8,12 @@
           flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 .layout__container .layout__children {
+  position: absolute;
+  top: 6.5rem;
   min-height: 80vh;
   width: 100%;
 }
