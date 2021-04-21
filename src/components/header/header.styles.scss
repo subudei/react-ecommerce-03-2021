@@ -9,7 +9,7 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
     margin-left: 2rem;
     .logo__wrap {
       display: flex;
@@ -76,6 +76,11 @@
           color: rgb(255, 38, 0);
         }
       }
+      @media screen and(max-width: 900px) {
+        .registration__links {
+          display: none;
+        }
+      }
 
       .current__user__links {
         display: flex;
@@ -96,8 +101,11 @@
         }
       }
       .registration__cart {
+        // background-color: cornflowerblue;
         height: 100%;
-        margin-left: 1.5rem;
+        // margin-left: 1.5rem;
+        margin: auto;
+        margin-right: 0.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -129,6 +137,11 @@
             z-index: -1;
           }
         }
+      }
+    }
+    @media screen and(max-width: 900px) {
+      .registration__div {
+        align-items: flex-end;
       }
     }
   }

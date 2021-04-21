@@ -16,7 +16,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  width: 95%;
   margin-left: 2rem;
 }
 
@@ -107,6 +107,12 @@
   color: #ff2600;
 }
 
+@media screen and (max-width: 900px) {
+  .header__container .header__wrap .registration__div .registration__links {
+    display: none;
+  }
+}
+
 .header__container .header__wrap .registration__div .current__user__links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,7 +145,8 @@
 
 .header__container .header__wrap .registration__div .registration__cart {
   height: 100%;
-  margin-left: 1.5rem;
+  margin: auto;
+  margin-right: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,5 +190,13 @@
   padding: 3px 5px;
   border-radius: 50%;
   z-index: -1;
+}
+
+@media screen and (max-width: 900px) {
+  .header__container .header__wrap .registration__div {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
 }
 /*# sourceMappingURL=header.styles.css.map */

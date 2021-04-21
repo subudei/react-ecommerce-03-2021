@@ -1,4 +1,5 @@
 .layout__container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,12 +9,10 @@
           flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  position: relative;
+  min-height: 100vh;
 }
 
 .layout__container .layout__children {
-  position: absolute;
-  top: 6.5rem;
   min-height: 80vh;
   width: 100%;
 }

@@ -27,40 +27,43 @@ function MobileMenu() {
   };
 
   return (
-    <>
-      {clicked ? (
-        <div className="mobile__menu__links" onClick={() => setClicked(false)}>
-          <Link className="menu__link" to="/">
-            home
+    <div className="mobile__container">
+      <div
+        className={
+          clicked ? "mobile__menu__links" : "mobile__menu__links hidden"
+        }
+        onClick={() => setClicked(false)}
+      >
+        <Link className="menu__link" to="/">
+          home
+        </Link>
+        <Link className="menu__link" to="/search">
+          products
+        </Link>
+        {currentUser ? (
+          <Link className="menu__link" to="/dashboard">
+            my account
           </Link>
-          <Link className="menu__link" to="/search">
-            products
+        ) : (
+          <Link className="menu__link" to="/registration">
+            register
           </Link>
-          {currentUser ? (
-            <Link className="menu__link" to="/dashboard">
-              my account
-            </Link>
-          ) : (
-            <Link className="menu__link" to="/registration">
-              register
-            </Link>
-          )}
-          {currentUser ? (
-            <div className="menu__link" onClick={() => signOut()}>
-              logout
-            </div>
-          ) : (
-            <Link className="menu__link" to="/login">
-              login
-            </Link>
-          )}
-        </div>
-      ) : null}
+        )}
+        {currentUser ? (
+          <div className="menu__link" onClick={() => signOut()}>
+            logout
+          </div>
+        ) : (
+          <Link className="menu__link" to="/login">
+            login
+          </Link>
+        )}
+      </div>
       <div className="mobile__menu__button" onClick={() => handleClick()}>
         <HiMenuAlt1 className="button__icon" />
         <h1 className="button__title">menu</h1>
       </div>
-    </>
+    </div>
   );
 }
 

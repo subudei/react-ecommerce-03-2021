@@ -7,7 +7,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative;
 }
 
 .home__container .home__title {
@@ -18,7 +17,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   height: 30vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -29,15 +29,11 @@
 }
 
 .home__container .home__title h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1rem, 2.5rem, 4.5rem);
+  line-height: 1.5;
   letter-spacing: 0.3rem;
   margin-bottom: 2rem;
-}
-
-.home__container .home__title p {
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-  color: #ff2600;
-  padding: 1rem;
+  margin: auto;
+  text-align: center;
 }
 /*# sourceMappingURL=homePage.styles.css.map */

@@ -39,3 +39,17 @@
     }
   }
 }
+@media screen and(max-width: 900px) {
+  .video__container {
+    height: 90vh;
+    .video__overlay {
+      padding: 0 2rem;
+      .video__shop__name {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}

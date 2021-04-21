@@ -11,7 +11,6 @@ function Layout(props) {
       <Header {...props} />
       <MobileMenu />
       <div className="layout__children">{props.children}</div>
-
       <Footer />
     </div>
   );

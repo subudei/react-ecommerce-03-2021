@@ -2,26 +2,24 @@
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
+  // position: relative;
 
   .home__title {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: 30vh;
     align-items: center;
     justify-content: center;
 
     h1 {
-      font-size: 3.5rem;
+      font-size: clamp(1rem, 2.5rem, 4.5rem);
+      line-height: 1.5;
       letter-spacing: 0.3rem;
       margin-bottom: 2rem;
-    }
-    p {
-      font-size: 2rem;
-      letter-spacing: 0.2rem;
-      color: rgb(255, 38, 0);
-      padding: 1rem;
+      margin: auto;
+      text-align: center;
     }
   }
 }

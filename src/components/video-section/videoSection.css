@@ -51,4 +51,19 @@
   font-weight: 600;
   line-height: 1.5;
 }
+
+@media screen and (max-width: 900px) {
+  .video__container {
+    height: 90vh;
+  }
+  .video__container .video__overlay {
+    padding: 0 2rem;
+  }
+  .video__container .video__overlay .video__shop__name {
+    font-size: 2.5rem;
+  }
+  .video__container .video__overlay p {
+    font-size: 2rem;
+  }
+}
 /*# sourceMappingURL=videoSection.css.map */
