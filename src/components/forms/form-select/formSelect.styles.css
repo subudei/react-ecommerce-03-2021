@@ -22,4 +22,10 @@
   outline: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+  .form__select__row select {
+    font-size: 1.5rem;
+  }
+}
 /*# sourceMappingURL=formSelect.styles.css.map */

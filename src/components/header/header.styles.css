@@ -193,10 +193,18 @@
 }
 
 @media screen and (max-width: 900px) {
+  .header__container {
+    width: 100%;
+  }
+  .header__container .header__wrap {
+    width: 90vw;
+  }
   .header__container .header__wrap .registration__div {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    margin-right: 0;
+    min-width: 5rem;
   }
 }
 /*# sourceMappingURL=header.styles.css.map */

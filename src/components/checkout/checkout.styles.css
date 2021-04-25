@@ -2,24 +2,13 @@
   margin: 2rem auto;
 }
 
-.checkout__container h1 {
+.checkout__container .checkout__title {
   font-size: 2.5rem;
   font-weight: 500;
   display: block;
   width: 100%;
-  margin-bottom: 2.5rem;
-}
-
-.checkout__container h1,
-.checkout__container p {
+  margin-bottom: 3.5rem;
   text-align: center;
-}
-
-.checkout__container .checkout__header {
-  padding-bottom: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 0.1rem solid black;
 }
 
 .checkout__container .cart {
@@ -27,31 +16,66 @@
   margin: 0 auto;
 }
 
-.checkout__container .cart table {
+.checkout__container .cart .checkout__header {
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.checkout__container .cart .checkout__header .checkout__ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.checkout__container .cart .checkout__header .checkout__ul .checkout__list {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.checkout__container .cart .checkout__item {
   width: 100%;
 }
 
-.checkout__container .checkout__header,
-.checkout__container .cart {
+.checkout__container .cart__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  text-align: left;
+  margin-bottom: 1rem;
+  min-height: 4rem;
 }
 
-.checkout__container .checkout__header th,
-.checkout__container .checkout__header td,
-.checkout__container .cart th,
-.checkout__container .cart td {
-  width: 22%;
+.checkout__container .cart__item .item__props {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.checkout__container .checkout__header .cart__item td img,
-.checkout__container .cart .cart__item td img {
+.checkout__container .cart__item .item__props img {
   display: block;
   width: 100%;
 }
 
-.checkout__container .checkout__header .cart__item .item__btn,
-.checkout__container .cart .cart__item .item__btn {
+.checkout__container .cart__item .item__props .item__btn {
   cursor: pointer;
+  margin: 0 0.8rem;
 }
 /*# sourceMappingURL=checkout.styles.css.map */

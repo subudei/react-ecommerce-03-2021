@@ -34,40 +34,31 @@ function Item(product) {
   };
 
   return (
-    <table className="cart__item" border="0" cellPadding="10" cellSpacing="0">
-      <tbody>
-        <tr>
-          <td>
-            <img src={productThumbnail} alt={productName} />
-          </td>
-          <td>{productName}</td>
-          <td>
-            <span
-              className="item__btn"
-              onClick={() => handleReduceItem(product)}
-            >
-              {"< "}
-            </span>
-            <span>{quantity}</span>
-            <span
-              className="item__btn"
-              onClick={() => handleAddProduct(product)}
-            >
-              {" >"}
-            </span>
-          </td>
-          <td>$ {productPrice}</td>
-          <td align="center">
-            <span
-              className="item__btn"
-              onClick={() => handleRemoveCartItem(documentID)}
-            >
-              X
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="cart__item">
+      <div className="item__props wide">
+        <img src={productThumbnail} alt={productName} />
+      </div>
+      <div className="item__props">{productName}</div>
+      <div className="item__props">
+        <span className="item__btn" onClick={() => handleReduceItem(product)}>
+          {"< "}
+        </span>
+        <span>{quantity}</span>
+        <span className="item__btn" onClick={() => handleAddProduct(product)}>
+          {" >"}
+        </span>
+      </div>
+      <div className="item__props">$ {productPrice}</div>
+      <div className="item__props">
+        <span
+          style={{ color: "red" }}
+          className="item__btn"
+          onClick={() => handleRemoveCartItem(documentID)}
+        >
+          X
+        </span>
+      </div>
+    </div>
   );
 }
 
