@@ -288,10 +288,18 @@ function PaymentDetails() {
           </div>
         </div>
         <div className="pd__group">
-          <h2>Card Details</h2>
+          <h2>Card Details *</h2>
+          <h3 style={{ color: "red", marginBottom: "10px" }}>
+            Use TEST CARD for payment
+          </h3>
           <CardElement options={configCardElement} />
         </div>
         <Button type="submit">Pay Now</Button>
+        <div className="payment__note">
+          <h3>Test Card Number: 4242 4242 4242 4242</h3>
+          <h3>Test Card CVC: Any 3 number</h3>
+          <h3>Test Card Date: Any future date</h3>
+        </div>
       </form>
     </div>
   );

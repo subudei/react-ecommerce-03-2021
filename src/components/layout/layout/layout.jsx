@@ -9,7 +9,7 @@ function Layout(props) {
   return (
     <div className="layout__container">
       <Header {...props} />
-      {/* <MobileMenu /> */}
+      <MobileMenu />
       <div className="layout__children">{props.children}</div>
       <Footer />
     </div>

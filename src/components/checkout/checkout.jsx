@@ -119,9 +119,22 @@ function Checkout({}) {
                 </div>
               );
             })}
+            <div className="checkout__total">Total: $ {total.toFixed(2)}</div>
+            <div className="checkout__btns">
+              <div className="checkout__btn">
+                <Button onClick={() => history.goBack()}>
+                  Continue Shoping
+                </Button>
+              </div>
+              <div className="checkout__btn">
+                <Button onClick={() => history.push("/payment")}>
+                  Checkout
+                </Button>
+              </div>
+            </div>
           </div>
         ) : (
-          <p style={{ color: "red" }}>Your cart is empty.</p>
+          <p className="empty__cart">Your cart is empty.</p>
         )}
       </div>
     </div>

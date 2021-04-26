@@ -51,7 +51,7 @@ function Item(product) {
       <div className="item__props">$ {productPrice}</div>
       <div className="item__props">
         <span
-          style={{ color: "red" }}
+          style={{ color: "red", fontWeight: "700" }}
           className="item__btn"
           onClick={() => handleRemoveCartItem(documentID)}
         >

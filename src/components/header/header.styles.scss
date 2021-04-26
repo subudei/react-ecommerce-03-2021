@@ -94,6 +94,11 @@
           font-size: 1.4rem;
           cursor: pointer;
         }
+        @media screen and(max-width:900px) {
+          .registration__logout {
+            display: none;
+          }
+        }
       }
       .registration__cart {
         height: 100%;

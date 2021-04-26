@@ -9,6 +9,7 @@ import { signOutUserStart } from "../../../redux/user/user.actions";
 import Header from "../../header/header";
 import VerticalNav from "../../vertical-nav/verticalNav";
 import Footer from "../../footer/footer";
+import MobileMenu from "../../mobile-menu/mobileMenu";
 
 function DashBoardLayout(props) {
   const dispatch = useDispatch();
@@ -22,10 +23,11 @@ function DashBoardLayout(props) {
       <Header {...props} />
       <div className="dashboard__control__panel">
         <div className="dashboard__sidebar">
+          <MobileMenu />
           <VerticalNav>
             <ul>
               <li>
-                <Link to="/dashboard">Home</Link>
+                <Link to="/dashboard">My Orders</Link>
               </li>
               <li>
                 <span

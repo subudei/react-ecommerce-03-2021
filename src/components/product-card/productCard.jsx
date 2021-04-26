@@ -37,13 +37,13 @@ function ProductCard({}) {
     };
   }, []);
 
-  const configAddToCart = {
-    type: "button",
-  };
   const handleAddToCart = (product) => {
     if (!product) return;
     dispatch(addProduct(product));
     history.push("/cart");
+  };
+  const configAddToCartBtn = {
+    type: "button",
   };
 
   return (
@@ -61,7 +61,10 @@ function ProductCard({}) {
           dangerouslySetInnerHTML={{ __html: productDescription }}
         />
         <div className="product__card__add__to__cart">
-          <Button {...configAddToCart} onClick={() => handleAddToCart(product)}>
+          <Button
+            {...configAddToCartBtn}
+            onClick={() => handleAddToCart(product)}
+          >
             Add to cart
           </Button>
         </div>

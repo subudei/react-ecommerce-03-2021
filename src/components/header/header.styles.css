@@ -143,6 +143,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 900px) {
+  .header__container .header__wrap .registration__div .current__user__links .registration__logout {
+    display: none;
+  }
+}
+
 .header__container .header__wrap .registration__div .registration__cart {
   height: 100%;
   margin: auto;

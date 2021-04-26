@@ -6,17 +6,17 @@ export const existingCartItem = ({ prevCartItems, nextCartItem }) => {
 
 export const handleAddToCart = ({ prevCartItems, nextCartItem }) => {
   const quantityIncrement = 1;
-  const cartItemExist = existingCartItem({ prevCartItems, nextCartItem });
+  const cartItemExists = existingCartItem({ prevCartItems, nextCartItem });
 
-  if (cartItemExist) {
-    return prevCartItems.map((cartItem) => {
-      return cartItem.documentID == nextCartItem.documentID
+  if (cartItemExists) {
+    return prevCartItems.map((cartItem) =>
+      cartItem.documentID == nextCartItem.documentID
         ? {
             ...cartItem,
             quantity: cartItem.quantity + quantityIncrement,
           }
-        : cartItem;
-    });
+        : cartItem
+    );
   }
 
   return [
